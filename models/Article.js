@@ -12,10 +12,10 @@ let ArticleSchema = new Schema({
     required: true
   },
   //
-  excerpt: {
-    type: String,
-    required: true
-  },
+ // excerpt: {
+ //   type: String,
+ //   required: true
+ // },
   // `link` is required and of type String
   link: {
     type: String,

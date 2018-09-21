@@ -52,9 +52,9 @@ app.get("/scrape", function (req, res) {
                 .children("a")
                 .text();
             //Where I tried to scrape the description of the article with no luck
-            result.excerpt = $(this)
-                .find("div.cb-excerpt")
-                .text().trim();
+            //result.excerpt = $(this)
+            //  .find("div.cb-excerpt")
+            //.text().trim();
             result.link = $(this)
                 .children("a")
                 .attr("href");
