@@ -11,7 +11,7 @@ const cheerio = require("cheerio");
 // Require all models
 let db = require("./models");
 
-let PORT = 3000;
+let PORT = process.env.PORT || 3000;
 
 // Initialize Express
 let app = express();
@@ -31,9 +31,10 @@ let MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines
 // Set mongoose to leverage built in JavaScript ES6 Promises
 // Connect to the Mongo DB
 mongoose.Promise = Promise;
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Routes
+
 
 // A GET route for scraping the Playlist site
 app.get("/scrape", function (req, res) {
@@ -75,6 +76,10 @@ app.get("/scrape", function (req, res) {
         res.send("Scrape Complete");
     });
 });
+
+app.get('/', function(req, res){
+    res.redirect('/');
+ });
 
 // Route for getting all Articles from the db
 app.get("/articles", function (req, res) {
@@ -127,6 +132,6 @@ app.post("/articles/:id", function (req, res) {
 });
 
 // Start the server
-app.listen(PORT, function () {
+app.listen((process.env.PORT || 3000), function () {
     console.log("App running on port " + PORT + "!");
 });
