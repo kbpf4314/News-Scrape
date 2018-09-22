@@ -11,7 +11,7 @@ Heroku link: https://frozen-spire-11850.herokuapp.com/
 -
 
 Did not get to finish certain parts of this assignment:
-- Removing old notes is not an option techinically, but you can update notes that have been saved to the DB.
+- Removing old notes is not an option technically, but you can update notes that have been saved to the DB.
 
 - Duplicate articles are being scraped on button click.
 
